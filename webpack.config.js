@@ -1,7 +1,6 @@
 const path = require('path')
 
 module.exports = {
-  mode: 'development',
   entry: './src/app.js',
   output: {
     path: path.resolve(__dirname, 'public'),
@@ -12,16 +11,6 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
-      // use: {
-      //   loader: 'babel-loader',
-      //   options: {
-      //     presets: ['@babel/preset-react', '@babel/preset-env'],
-      //     plugins: [
-      //       '@babel/plugin-proposal-class-properties',
-      //       '@babel/plugin-transform-modules-commonjs'
-      //     ]
-      //   }
-      // }
     }, {
       test: /\.scss$/,
       exclude: /node_modules/,

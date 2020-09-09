@@ -40,8 +40,9 @@ test('Should handle sortBy date', () => {
 })
 
 test('Should handle calendar focus update', () => {
-  wrapper.find('withStyles(DateRangePicker)').prop('onFocusChange')(true)
-  expect(wrapper.state('calendarFocused')).toBe(true)
+  const calendarFocused = 'endDate';
+  wrapper.find('withStyles(DateRangePicker)').prop('onFocusChange')(calendarFocused)
+  expect(wrapper.state('calendarFocused')).toBe(calendarFocused)
 })
 
 test('Should handle setStartDate function calls', () => {

@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "live-server public/",
     "dev-server": "webpack-dev-server",
-    "build": "webpack",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env=production",
     "test": "jest --config=jest.config.json"
   },
   "keywords": [],
@@ -25,6 +27,8 @@
     "enzyme-adapter-react-16": "^1.15.4",
     "enzyme-to-json": "^3.5.0",
     "jest": "^26.4.2",
+    "live-server": "^1.2.1",
+    "mini-css-extract-plugin": "^0.11.1",
     "node-sass": "^4.14.1",
     "raf": "^3.4.1",
     "react-test-renderer": "^16.13.1",
@@ -35,7 +39,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "firebase": "^7.19.1",
     "moment": "^2.27.0",
+    "numeral": "^2.0.6",
     "react": "^16.13.1",
     "react-addons-shallow-compare": "^15.6.2",
     "react-dates": "^21.8.0",

@@ -56,21 +56,27 @@ class ExpenseForm extends React.Component {
     return (
       <form onSubmit={this.onFormSubmit}>
         {this.state.error && <p>{this.state.error}</p>}
-        <input
-          onChange={this.onInputChange}
-          value={this.state.description}
-          name="description"
-          type="text"
-          placeholder="Description"
-          autoFocus
-        />
-        <input
-          onChange={this.onAmountChange}
-          value={this.state.amount}
-          name="amount"
-          type="text"
-          placeholder="Amount"
-        />
+        <label style={{ display: 'flex', flexDirection: 'column' }}>
+        <b>Description</b>
+          <input
+            onChange={this.onInputChange}
+            value={this.state.description}
+            name="description"
+            type="text"
+            placeholder="e.g., Lunch with friends"
+            autoFocus
+          />
+        </label>
+        <label>
+          <b>Amount</b>
+          <input
+            onChange={this.onAmountChange}
+            value={this.state.amount}
+            name="amount"
+            type="text"
+            placeholder="e.g.: 2.35"
+          />
+        </label>
         <SingleDatePicker
           date={this.state.createdAt}
           onDateChange={this.onDateChange}

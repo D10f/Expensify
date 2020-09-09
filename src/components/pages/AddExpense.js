@@ -1,29 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addExpense } from '../../redux/actions/expenses'
+// import { addExpense } from '../../redux/actions/expenses'
+import { database } from '../../firebase/firebase'
 import ExpenseForm from '../ExpenseForm'
 
-export class AddExpensePage extends React.Component {
+export const AddExpensePage = (props) => {
 
-  onSubmit = (expense) => {
-    this.props.addExpense(expense)
-    this.props.history.push('/')
+  const onSubmit = (expenseData) => {
+    database.ref('expenses').push(expenseData).then(() => props.history.push('/'))
+    // props.addExpense(expense)
   }
 
-  render(){
-    return (
-      <section>
-        <h3>Create New Expense</h3>
-        <ExpenseForm
-          expense={{}}
-          onSubmit={this.onSubmit} />
-      </section>
-    )
-  }
+  return (
+    <section>
+      <h3>Create New Expense</h3>
+      <ExpenseForm onSubmit={onSubmit} />
+    </section>
+  )
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  addExpense: (expense) => dispath(addExpense(expense))
+  addExpense: (expense) => dispatch(addExpense(expense))
 })
 
 export default connect(undefined, mapDispatchToProps)(AddExpensePage)

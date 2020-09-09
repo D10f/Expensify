@@ -11,7 +11,7 @@ exports[`Should render ExpenseItem 1`] = `
     Edit
   </Link>
   <p>
-    375
+    $3.75
   </p>
 </li>
 `;

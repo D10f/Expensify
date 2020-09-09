@@ -1,9 +1,9 @@
 import { v4 as uuid } from 'uuid'
 
-export const addExpense = ({ description = '', notes = '', amount = 100, createdAt = 0 } = {}) => ({
+export const addExpense = ({ id = uuid(), description = '', notes = '', amount = 100, createdAt = 0 } = {}) => ({
   type: 'ADD_EXPENSE',
   expense: {
-    id: uuid(),
+    id,
     description,
     notes,
     amount,

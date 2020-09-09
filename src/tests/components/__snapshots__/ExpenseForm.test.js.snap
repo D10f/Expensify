@@ -4,21 +4,38 @@ exports[`Should render ExpenseForm correctly (add expense) 1`] = `
 <form
   onSubmit={[Function]}
 >
-  <input
-    autoFocus={true}
-    name="description"
-    onChange={[Function]}
-    placeholder="Description"
-    type="text"
-    value=""
-  />
-  <input
-    name="amount"
-    onChange={[Function]}
-    placeholder="Amount"
-    type="text"
-    value=""
-  />
+  <label
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+      }
+    }
+  >
+    <b>
+      Description
+    </b>
+    <input
+      autoFocus={true}
+      name="description"
+      onChange={[Function]}
+      placeholder="e.g., Lunch with friends"
+      type="text"
+      value=""
+    />
+  </label>
+  <label>
+    <b>
+      Amount
+    </b>
+    <input
+      name="amount"
+      onChange={[Function]}
+      placeholder="e.g.: 2.35"
+      type="text"
+      value=""
+    />
+  </label>
   <withStyles(SingleDatePicker)
     anchorDirection="left"
     appendToBody={false}
@@ -130,21 +147,38 @@ exports[`Should render ExpenseForm with expense data (edit expense) 1`] = `
 <form
   onSubmit={[Function]}
 >
-  <input
-    autoFocus={true}
-    name="description"
-    onChange={[Function]}
-    placeholder="Description"
-    type="text"
-    value="Chocolate"
-  />
-  <input
-    name="amount"
-    onChange={[Function]}
-    placeholder="Amount"
-    type="text"
-    value="3.75"
-  />
+  <label
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+      }
+    }
+  >
+    <b>
+      Description
+    </b>
+    <input
+      autoFocus={true}
+      name="description"
+      onChange={[Function]}
+      placeholder="e.g., Lunch with friends"
+      type="text"
+      value="Chocolate"
+    />
+  </label>
+  <label>
+    <b>
+      Amount
+    </b>
+    <input
+      name="amount"
+      onChange={[Function]}
+      placeholder="e.g.: 2.35"
+      type="text"
+      value="3.75"
+    />
+  </label>
   <withStyles(SingleDatePicker)
     anchorDirection="left"
     appendToBody={false}
@@ -255,21 +289,38 @@ exports[`Should render error on invalid form submission 1`] = `
 <form
   onSubmit={[Function]}
 >
-  <input
-    autoFocus={true}
-    name="description"
-    onChange={[Function]}
-    placeholder="Description"
-    type="text"
-    value=""
-  />
-  <input
-    name="amount"
-    onChange={[Function]}
-    placeholder="Amount"
-    type="text"
-    value=""
-  />
+  <label
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+      }
+    }
+  >
+    <b>
+      Description
+    </b>
+    <input
+      autoFocus={true}
+      name="description"
+      onChange={[Function]}
+      placeholder="e.g., Lunch with friends"
+      type="text"
+      value=""
+    />
+  </label>
+  <label>
+    <b>
+      Amount
+    </b>
+    <input
+      name="amount"
+      onChange={[Function]}
+      placeholder="e.g.: 2.35"
+      type="text"
+      value=""
+    />
+  </label>
   <withStyles(SingleDatePicker)
     anchorDirection="left"
     appendToBody={false}
@@ -384,21 +435,38 @@ exports[`Should render error on invalid form submission 2`] = `
   <p>
     Please provide a description and amount for this expense.
   </p>
-  <input
-    autoFocus={true}
-    name="description"
-    onChange={[Function]}
-    placeholder="Description"
-    type="text"
-    value=""
-  />
-  <input
-    name="amount"
-    onChange={[Function]}
-    placeholder="Amount"
-    type="text"
-    value=""
-  />
+  <label
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+      }
+    }
+  >
+    <b>
+      Description
+    </b>
+    <input
+      autoFocus={true}
+      name="description"
+      onChange={[Function]}
+      placeholder="e.g., Lunch with friends"
+      type="text"
+      value=""
+    />
+  </label>
+  <label>
+    <b>
+      Amount
+    </b>
+    <input
+      name="amount"
+      onChange={[Function]}
+      placeholder="e.g.: 2.35"
+      type="text"
+      value=""
+    />
+  </label>
   <withStyles(SingleDatePicker)
     anchorDirection="left"
     appendToBody={false}

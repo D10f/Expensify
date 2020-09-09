@@ -1,10 +1,11 @@
 import React from 'react'
+import ExpenseSummary from '../ExpenseSummary'
 import ExpenseList from '../ExpenseList'
 import ExpenseListFilters from '../ExpenseListFilters'
 
 export const Dashboard = () => (
   <section>
-    <header>These are your current expenses:</header>
+    <ExpenseSummary />
     <ExpenseListFilters />
     <ExpenseList />
   </section>

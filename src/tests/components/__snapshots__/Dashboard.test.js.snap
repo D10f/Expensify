@@ -2,9 +2,7 @@
 
 exports[`should render Dashboard correctly 1`] = `
 <section>
-  <header>
-    These are your current expenses:
-  </header>
+  <Connect(ExpenseSummary) />
   <Connect(ExpenseListFilters) />
   <Connect(ExpenseList) />
 </section>
