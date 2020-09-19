@@ -1,19 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { editExpense, removeExpense } from '../../redux/actions/expenses'
+import { startEditExpense, startRemoveExpense } from '../../redux/actions/expenses'
 import { database } from '../../firebase/firebase'
 import ExpenseForm from '../ExpenseForm'
 
 export class EditExpensePage extends React.Component {
 
   onClick = () => {
-    database.ref(`expenses/${this.props.expense.id}`).remove().then(() => this.props.history.push('/'))
-    // this.props.removeExpense({ id: this.props.expense.id })
+    // database.ref(`expenses/${this.props.expense.id}`).remove().then(() => this.props.history.push('/'))
+    this.props.startRemoveExpense(this.props.expense.id)
+    this.props.history.push('/')
   }
 
   onSubmit = (updatedExpense) => {
-    database.ref(`expenses/${this.props.expense.id}`).update(updatedExpense).then(() => this.props.history.push('/'))
-    // this.props.editExpense(this.props.expense.id, updatedExpense)
+    // database.ref(`expenses/${this.props.expense.id}`).update(updatedExpense).then(() => this.props.history.push('/'))
+    this.props.startEditExpense(this.props.expense.id, updatedExpense)
+    this.props.history.push('/')
   }
 
   render(){
@@ -34,10 +36,10 @@ const mapStateToProps = (state, props) => {
     expense: state.expenses.find(expense => expense.id === props.match.params.id)
   }
 }
-//
-// const mapDispatchToProps = (dispatch) => ({
-//   editExpense: (id, updates) => dispatch(editExpense(id, updates)),
-//   removeExpense: (id) => dispatch(removeExpense(id))
-// })
 
-export default connect(mapStateToProps)(EditExpensePage)
+const mapDispatchToProps = (dispatch) => ({
+  startEditExpense: (id, updates) => dispatch(startEditExpense(id, updates)),
+  startRemoveExpense: (id) => dispatch(startRemoveExpense(id))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditExpensePage)

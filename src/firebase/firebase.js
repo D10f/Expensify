@@ -1,19 +1,18 @@
 import * as firebase from 'firebase'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCZUU2dziWi7E3Po3-iY0yKrD9fc54PyUc",
-  authDomain: "expensify-c2194.firebaseapp.com",
-  databaseURL: "https://expensify-c2194.firebaseio.com",
-  projectId: "expensify-c2194",
-  storageBucket: "expensify-c2194.appspot.com",
-  messagingSenderId: "902574996266",
-  appId: "1:902574996266:web:4a1b0ed097ef83f773bc53"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.FIREBASE_DATABASE_URL,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID
 };
 
 firebase.initializeApp(firebaseConfig)
 
 export const database = firebase.database()
-
 
 // const subscription = database.ref('expenses').on('value', (snapshot) => {
 //   console.log(snapshot.val())

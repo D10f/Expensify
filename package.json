@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "server": "live-server public/",
-    "dev-server": "webpack-dev-server",
+    "dev-server": "env-cmd -e development webpack-dev-server --env=development",
     "build:dev": "webpack",
     "build:prod": "webpack -p --env=production",
-    "test": "jest --config=jest.config.json"
+    "test": "env-cmd -e test jest --config=jest.config.json"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.2.2",
+    "env-cmd": "^10.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.4",
     "enzyme-to-json": "^3.5.0",
@@ -32,6 +33,7 @@
     "node-sass": "^4.14.1",
     "raf": "^3.4.1",
     "react-test-renderer": "^16.13.1",
+    "redux-mock-store": "^1.5.4",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
@@ -49,6 +51,7 @@
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "uuid": "^8.3.0"
   }
 }

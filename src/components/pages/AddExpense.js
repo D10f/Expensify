@@ -1,14 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
-// import { addExpense } from '../../redux/actions/expenses'
+import { startAddExpense } from '../../redux/actions/expenses'
 import { database } from '../../firebase/firebase'
 import ExpenseForm from '../ExpenseForm'
 
 export const AddExpensePage = (props) => {
 
-  const onSubmit = (expenseData) => {
-    database.ref('expenses').push(expenseData).then(() => props.history.push('/'))
-    // props.addExpense(expense)
+  const onSubmit = (expense) => {
+    // database.ref('expenses').push(expenseData).then(() => props.history.push('/'))
+    props.startAddExpense(expense)
+    props.history.push('/')
   }
 
   return (
@@ -20,7 +21,7 @@ export const AddExpensePage = (props) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  addExpense: (expense) => dispatch(addExpense(expense))
+  startAddExpense: (expense) => dispatch(startAddExpense(expense))
 })
 
 export default connect(undefined, mapDispatchToProps)(AddExpensePage)

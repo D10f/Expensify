@@ -55,3 +55,15 @@ test('Should add new expense with default values', () => {
   const state = expenseReducer(expenses, action)
   expect(state[state.length - 1]).toEqual(expense)
 })
+
+test('Should set store to specific expenses passed in', () => {
+  const expense = {
+    description: 'CD',
+    amount: 8,
+    note: '',
+    createdAt: 0
+  }
+  const action = { type: 'SET_EXPENSES', expenses }
+  const state = expenseReducer([expense], action)
+  expect(state).toEqual(expenses)
+})
